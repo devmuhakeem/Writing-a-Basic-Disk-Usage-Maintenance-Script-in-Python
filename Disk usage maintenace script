@@ -1,0 +1,15 @@
+                             
+import shutil
+def check_disk_usage(threshold):
+# Get disk usage details
+total, used, free = shutil.disk_usage("/")
+#Calculate the percentage of disk usage
+usage_percent = (used / total) * 100
+# Notify if usage exceeds the threshold
+if usage_percent > threshold:
+print(f"Warning: Disk usage is at {usage_percent: .2f}%!")
+else:
+print(f"Disk usage is within limits: {usage_percent: .2f}%.")
+# Set threshold for disk usage in percentage
+threshold = 80 # Adjust as needed
+check_disk_usage(threshold)
